@@ -1,73 +1,96 @@
-# Welcome to your Lovable project
+# Ayurveda+ E-commerce Platform
 
-## Project info
+A modern, responsive e-commerce platform for Ayurvedic and herbal products, built with React, TypeScript, and Next.js.
 
-**URL**: https://lovable.dev/projects/b57a7659-1c7e-4dec-8be6-bdd8868d2d7d
+![Ayurveda+ Banner](src/assets/19.jpg)
 
-## How can I edit this code?
+## 🚀 Features
 
-There are several ways of editing your application.
+- **Product Catalog**: Browse a wide range of Ayurvedic products
+- **Shopping Cart**: Add/remove items and adjust quantities
+- **Checkout Process**: Secure checkout with form validation
+- **Responsive Design**: Works on all devices
+- **Modern UI**: Built with shadcn/ui and Tailwind CSS
+- **State Management**: Context API for cart management
+- **Type Safety**: Full TypeScript support
 
-**Use Lovable**
+## 🛠️ Tech Stack
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/b57a7659-1c7e-4dec-8be6-bdd8868d2d7d) and start prompting.
+- **Frontend**: React 18, TypeScript, Next.js
+- **Styling**: Tailwind CSS, shadcn/ui
+- **State Management**: React Context API
+- **Form Handling**: React Hook Form
+- **Icons**: Lucide Icons
+- **QR Code**: react-qr-code
 
-Changes made via Lovable will be committed automatically to this repo.
+## 🚀 Getting Started
 
-**Use your preferred IDE**
+### Prerequisites
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+- Node.js 16.8 or later
+- npm or yarn package manager
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### Installation
 
-Follow these steps:
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/ayurveda-ecommerce.git
+   cd ayurveda-ecommerce
+   ```
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+2. Install dependencies:
+   ```bash
+   npm install
+   # or
+   yarn
+   ```
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+3. Start the development server:
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
 
-# Step 3: Install the necessary dependencies.
-npm i
+4. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+## 📂 Project Structure
+
+```
+src/
+├── components/     # Reusable UI components
+├── contexts/      # React context providers
+├── pages/         # Application pages
+├── styles/        # Global styles
+└── utils/         # Utility functions
 ```
 
-**Edit a file directly in GitHub**
+## 🌐 Pages
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+- **Home**: Featured products and categories
+- **Products**: All available products
+- **Cart**: Shopping cart with order summary
+- **Checkout**: Secure checkout process
 
-**Use GitHub Codespaces**
+## 🛒 Cart Features
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+- Add/remove products
+- Adjust quantities
+- Real-time total calculation
+- Responsive cart dropdown
 
-## What technologies are used for this project?
+## 📱 Responsive Design
 
-This project is built with:
+- Mobile-first approach
+- Responsive navigation
+- Optimized for all screen sizes
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## 📝 License
 
-## How can I deploy this project?
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-Simply open [Lovable](https://lovable.dev/projects/b57a7659-1c7e-4dec-8be6-bdd8868d2d7d) and click on Share -> Publish.
+## 🙏 Acknowledgments
 
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+- [shadcn/ui](https://ui.shadcn.com/) for the amazing component library
+- [Lucide Icons](https://lucide.dev/) for beautiful icons
+- [Tailwind CSS](https://tailwindcss.com/) for utility-first CSS
