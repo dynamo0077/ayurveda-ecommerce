@@ -1,0 +1,232 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Ayurveda & Herbal Store Design System - Earthy, Natural, Organic */
+
+@layer base {
+  :root {
+    /* Natural Background Colors */
+    --background: 30 20% 98%;
+    --foreground: 25 15% 15%;
+
+    /* Card & Surface Colors */
+    --card: 30 20% 99%;
+    --card-foreground: 25 15% 15%;
+
+    --popover: 30 20% 99%;
+    --popover-foreground: 25 15% 15%;
+
+    /* Primary - Sage Green */
+    --primary: 120 25% 35%;
+    --primary-foreground: 30 20% 98%;
+    --primary-light: 120 30% 45%;
+    --primary-lighter: 120 35% 85%;
+
+    /* Secondary - Warm Brown */
+    --secondary: 25 35% 65%;
+    --secondary-foreground: 30 20% 98%;
+    --secondary-dark: 25 40% 25%;
+
+    /* Muted Earth Tones */
+    --muted: 30 15% 93%;
+    --muted-foreground: 25 12% 45%;
+
+    /* Accent - Forest Green */
+    --accent: 140 30% 30%;
+    --accent-foreground: 30 20% 98%;
+    --accent-light: 140 35% 85%;
+
+    /* Natural Complementary Colors */
+    --earth-brown: 25 40% 45%;
+    --sage-green: 120 25% 35%;
+    --forest-green: 140 30% 30%;
+    --cream: 30 25% 95%;
+    --warm-beige: 35 20% 88%;
+
+    /* System Colors */
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 30 20% 98%;
+
+    --border: 30 12% 88%;
+    --input: 30 12% 92%;
+    --ring: 120 25% 35%;
+
+    --radius: 0.75rem;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(120 25% 35% / 0.9), hsl(140 30% 30% / 0.8));
+    --gradient-nature: linear-gradient(180deg, hsl(120 35% 85%), hsl(30 25% 95%));
+    --gradient-earth: linear-gradient(45deg, hsl(25 40% 45%), hsl(35 30% 55%));
+
+    /* Shadows */
+    --shadow-natural: 0 4px 20px hsl(120 25% 35% / 0.1);
+    --shadow-soft: 0 2px 12px hsl(25 15% 15% / 0.08);
+    --shadow-glow: 0 0 30px hsl(120 35% 85% / 0.4);
+
+    /* Natural spacing and typography */
+    --spacing-organic: 1.618rem; /* Golden ratio spacing */
+    
+    /* Animation Timings */
+    --transition-natural: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --transition-smooth: all 0.3s ease-out;
+  }
+
+  .dark {
+    --background: 25 15% 8%;
+    --foreground: 30 20% 95%;
+    --card: 25 15% 10%;
+    --card-foreground: 30 20% 95%;
+    --popover: 25 15% 10%;
+    --popover-foreground: 30 20% 95%;
+    --primary: 120 35% 65%;
+    --primary-foreground: 25 15% 8%;
+    --secondary: 25 25% 20%;
+    --secondary-foreground: 30 20% 95%;
+    --muted: 25 15% 15%;
+    --muted-foreground: 30 15% 65%;
+    --accent: 140 35% 55%;
+    --accent-foreground: 25 15% 8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', Georgia, serif;
+    @apply text-foreground;
+  }
+
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  /* Hero Section Styles */
+  .hero-gradient {
+    background: var(--gradient-hero);
+  }
+
+  .nature-gradient {
+    background: var(--gradient-nature);
+  }
+
+  .earth-gradient {
+    background: var(--gradient-earth);
+  }
+
+  /* Natural Shadows */
+  .shadow-natural {
+    box-shadow: var(--shadow-natural);
+  }
+
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  /* Animation Classes */
+  .animate-fade-up {
+    animation: fadeUp 0.8s ease-out forwards;
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.6s ease-out forwards;
+    transform: scale(0.9);
+    opacity: 0;
+  }
+
+  .animate-slide-in-left {
+    animation: slideInLeft 0.8s ease-out forwards;
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+
+  .animate-slide-in-right {
+    animation: slideInRight 0.8s ease-out forwards;
+    opacity: 0;
+    transform: translateX(30px);
+  }
+
+  /* Hover Effects */
+  .hover-lift {
+    transition: var(--transition-natural);
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-natural);
+  }
+
+  .hover-glow:hover {
+    box-shadow: var(--shadow-glow);
+  }
+
+  /* Natural Button Styles */
+  .btn-nature {
+    @apply bg-primary text-primary-foreground px-8 py-4 rounded-full font-medium;
+    transition: var(--transition-natural);
+    box-shadow: var(--shadow-soft);
+  }
+
+  .btn-nature:hover {
+    @apply bg-primary-light;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-natural);
+  }
+
+  .btn-outline-nature {
+    @apply border-2 border-primary text-primary px-8 py-4 rounded-full font-medium bg-transparent;
+    transition: var(--transition-natural);
+  }
+
+  .btn-outline-nature:hover {
+    @apply bg-primary text-primary-foreground;
+    transform: translateY(-2px);
+  }
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideInLeft {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
