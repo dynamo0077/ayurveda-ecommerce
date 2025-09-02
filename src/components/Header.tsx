@@ -3,6 +3,8 @@ import { Menu, X, User } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import CartDropdown from '@/components/CartDropdown';
 import { Link } from 'react-router-dom';
+import herbal18 from '../assets/18.jpg'
+import herbal19 from '../assets/19.jpg'
 
 
 const Header = () => {
@@ -16,13 +18,13 @@ const Header = () => {
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border shadow-soft">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white backdrop-blur-sm border-b border-border shadow-soft">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <div className="flex-shrink-0">
             <h1 className="text-2xl lg:text-3xl font-serif font-bold text-primary">
-              Ayurveda<span className="text-accent">+</span>
+              <img src={herbal19} alt="Logo" className="h-20 w-48" />
             </h1>
           </div>
 

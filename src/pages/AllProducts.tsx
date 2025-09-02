@@ -42,8 +42,8 @@ const AllProducts = () => {
       id: 2,
       name: 'Turmeric Immunity Blend',
       description: 'Organic turmeric with black pepper for enhanced absorption',
-      price: '$19.99',
-      originalPrice: '$24.99',
+      price: '₹1,670',
+      originalPrice: '₹2,087',
       rating: 4.9,
       reviews: 189,
       badge: 'New',
@@ -152,8 +152,8 @@ const AllProducts = () => {
       id: 12,
       name: 'Holy Basil Stress Relief',
       description: 'Sacred tulsi for natural stress management',
-      price: '$19.99',
-      originalPrice: '$24.99',
+      price: '₹1,670',
+      originalPrice: '₹2,087',
       rating: 4.6,
       reviews: 211,
       badge: 'Stress Relief',
@@ -236,10 +236,10 @@ const AllProducts = () => {
                     <div className="flex items-center justify-between mb-4">
                       <div className="flex items-center space-x-2">
                         <span className="text-2xl font-bold text-primary">
-                          {product.price}
+                          ₹{Number(product.price.replace(/[^0-9.-]+/g, "")).toLocaleString('en-IN')}
                         </span>
                         <span className="text-lg text-muted-foreground line-through">
-                          {product.originalPrice}
+                          ₹{Number(product.originalPrice.replace(/[^0-9.-]+/g, "")).toLocaleString('en-IN')}
                         </span>
                       </div>
                     </div>

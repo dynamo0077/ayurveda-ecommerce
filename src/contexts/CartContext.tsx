@@ -79,7 +79,8 @@ export const CartProvider = ({ children }: CartProviderProps) => {
 
   const getTotalPrice = () => {
     return items.reduce((total, item) => {
-      const price = parseFloat(item.price.replace('$', ''));
+      // Remove all non-numeric characters except decimal point and convert to number
+      const price = parseFloat(item.price.replace(/[^0-9.]/g, ''));
       return total + (price * item.quantity);
     }, 0);
   };

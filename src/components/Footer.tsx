@@ -1,4 +1,5 @@
 import { Heart, Facebook, Twitter, Instagram, Youtube } from 'lucide-react';
+import herbal19 from '../assets/19.jpg'
 
 const Footer = () => {
   const footerLinks = {
@@ -39,11 +40,11 @@ const Footer = () => {
             <div className="lg:col-span-2">
               <div className="mb-6">
                 <h2 className="text-3xl font-serif font-bold text-white">
-                  Ayurveda<span className="text-primary-light">+</span>
+                  <img src={herbal19} alt="Logo" className="h-auto w-80" />
                 </h2>
               </div>
               <p className="text-white/80 leading-relaxed mb-6 max-w-md">
-                Your trusted partner in natural health and wellness. We bring you authentic 
+                Your trusted partner in natural health and wellness. We bring you authentic
                 Ayurvedic products crafted with the highest quality ingredients and traditional wisdom.
               </p>
               <div className="flex space-x-4">

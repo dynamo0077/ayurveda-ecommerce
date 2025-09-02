@@ -3,8 +3,10 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { ShoppingCart, Plus, Minus, X } from 'lucide-react';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const CartDropdown = () => {
+  const navigate = useNavigate();
   const { items, updateQuantity, removeFromCart, getTotalItems, getTotalPrice } = useCart();
   const [isOpen, setIsOpen] = useState(false);
 
@@ -101,12 +103,24 @@ const CartDropdown = () => {
                 <div className="flex justify-between items-center mb-4">
                   <span className="text-lg font-semibold text-foreground">Total:</span>
                   <span className="text-lg font-bold text-primary">
-                    ${totalPrice.toFixed(2)}
+                    ₹{totalPrice.toLocaleString('en-IN', { maximumFractionDigits: 2 })}
                   </span>
                 </div>
-                <Button className="w-full btn-nature">
-                  Checkout
-                </Button>
+                <div className="space-y-2">
+                  <Button 
+                    className="w-full"
+                    onClick={() => navigate('/checkout')}
+                  >
+                    Proceed to Checkout
+                  </Button>
+                  <Button 
+                    variant="outline" 
+                    className="w-full"
+                    onClick={() => navigate('/cart')}
+                  >
+                    View Cart
+                  </Button>
+                </div>
               </div>
             )}
           </div>
