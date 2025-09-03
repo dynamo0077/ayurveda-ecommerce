@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -13,6 +14,7 @@ const Contact = () => {
     message: ''
   });
   const { toast } = useToast();
+  const navigate = useNavigate(); // Add this
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -34,13 +36,28 @@ const Contact = () => {
       return;
     }
 
-    // Simulate form submission
+    // Create contact data object
+    const contactData = {
+      ...formData,
+      submittedAt: new Date().toLocaleDateString('en-IN'),
+      submittedTime: new Date().toLocaleTimeString('en-IN'),
+      contactId: `CNT-${Math.random().toString(36).substr(2, 9).toUpperCase()}`
+    };
+
+    console.log('Contact form submitted:', contactData);
+
+    // Show success toast
     toast({
       title: "Message sent successfully!",
       description: "We'll get back to you within 24 hours.",
     });
 
-    // Reset form
+    // Navigate to confirmation page with contact data
+    navigate('/contact-confirmation', {
+      state: { contactData }
+    });
+
+    // Reset form (optional, since we're navigating away)
     setFormData({
       name: '',
       email: '',
